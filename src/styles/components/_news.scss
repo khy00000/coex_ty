@@ -1,0 +1,136 @@
+@use "../setting/index" as *;
+
+.news {
+  width: 100%;
+  height: 835.79px;
+  padding: 7.75rem 0 9rem;
+  display: flex;
+
+  //뉴스 타이틀 영역
+  .news_title {
+    width: 33.23%;
+
+    .news_title_wrap {
+      .news_title_text {
+        font-size: 3.125rem;
+        font-weight: bold;
+        line-height: 1.2em;
+      }
+    }
+
+    .news_link_wrap {
+      margin-top: 1.8125rem;
+
+      .news_link {
+        display: inline-block;
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 1.4em;
+        font-family: var(--font-en);
+        position: relative;
+        padding-right: 1.4rem;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          margin-top: -1px;
+          transform: translateY(-50%);
+          width: 1.125rem;
+          height: 0.9375em;
+          background-image: url(../../img/icon/news_arrow.svg);
+          background-size: 1.125rem 0.9375rem;
+        }
+      }
+    }
+  }
+
+  //뉴스 탭메뉴 영역
+  .news_con {
+    width: calc(100% - 33.23%);
+
+    // 탭메뉴 타이틀 영역
+    .news_con_tap_wrap {
+      width: 100%;
+      height: 33.6px;
+      margin-bottom: 2rem;
+
+      .news_con_tap {
+        margin: 0 -0.8125rem;
+
+        .news_con_tap_item {
+          float: left;
+          padding: 0 0.8125rem;
+
+          .news_con_tap_item_button{
+            color: #afafaf;
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1.4em;
+            background: none;
+            cursor: pointer;
+          }
+
+          &.active .news_con_tap_item_button{
+            color: black;
+          }
+        }
+      }
+    }
+
+    // 탭메뉴 게시판 리스트
+    .news_con_list {
+      width: 917.422;
+      height: 502.188;
+
+      .news_area {
+        border-top: 3px solid var(--black);
+
+        .news_item {
+          border-bottom: 1px solid var(--black);
+
+          .news_item_link {
+            display: flex;
+            gap: 3.5625rem;
+            width: 100%;
+            padding: 1.5rem 0;
+            align-items: center;
+
+            .news_item_date {
+              width: 4.625rem;
+              font-family: var(--font-en);
+              text-align: center;
+              padding: 0 0.625rem;
+
+              .news_item_dateday{
+                display: block;
+                font-size: 2.75rem;
+                font-weight: 600;
+                line-height: 1.2em;
+              }
+
+              .news_item_datemonth{
+                display: block;
+                margin-top: 0.3125rem;
+                font-size: 0.9375rem;
+                line-height: 1.2em;
+              }
+            }
+
+            .news_item_title {
+              font-size: 1.625rem;
+              font-weight: 600;
+              line-height: 1.4em;
+              white-space: nowrap;
+              vertical-align: middle;
+              text-overflow: ellipsis;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+}

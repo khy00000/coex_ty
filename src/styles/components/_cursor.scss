@@ -1,0 +1,32 @@
+@use "../setting/index" as *;
+
+.cursor {
+  position: fixed;
+  width: 7.875rem;
+  height: 7.875rem;
+  background-color: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.1);
+  z-index: 999999;
+  transition: transform 0.15s ease;
+  mix-blend-mode: difference;
+
+  .cursor-txt {
+    font-family: var(--font-en);
+    color: #fff;
+    font-size: 1.125rem;
+    line-height: 1.2em;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.cursor-hovered {
+  transform: translate(-50%, -50%) scale(1);
+  mix-blend-mode: unset;
+  background-color: black;
+}

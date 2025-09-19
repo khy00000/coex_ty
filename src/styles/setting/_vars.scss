@@ -1,0 +1,21 @@
+:root {
+  --font-main: "Pretendard", sans-serif;
+  --font-en: "Poppins", sans-serif;
+  --font-kr: "Noto Sans KR", sans-serif;
+
+  --black: #000;
+  --white: #fff;
+  --pink: #ed3da6;
+}
+
+$breakpoints: (
+  "mobile-m": 419px,
+  "mobile-l": 457px,
+  "mobile-xl": 580px,
+  "tablet-s": 747px,
+  "tablet": 768px,
+  "tablet-l": 799px,
+  "laptop": 1024px,
+  "laptop-l": 1025px,
+  "desktop": 1471px,
+);

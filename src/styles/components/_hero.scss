@@ -1,0 +1,206 @@
+@use "../setting/index" as *;
+
+.hero {
+  width: 100%;
+  padding-top: 8.4rem;
+  padding-bottom: 3.3em;
+
+  .hero_slide_box {
+    position: relative;
+
+    .hero_slide {
+      width: 100%;
+      height: 100%;
+      display: flex;
+
+      //히어로 텍스트 영역
+      .hero_slide_left {
+        width: calc(100% - 35rem);
+        height: 35rem;
+        position: relative;
+
+        // 히어로 서브 타이틀
+        .hero_sub_title {
+          font-size: 1.688rem;
+          line-height: 1.4em;
+          font-weight: 600;
+          font-family: var(--font-en);
+          color: var(--pink);
+          margin-bottom: 0.625rem;
+        }
+
+        // swiper
+        .hero_title_wrap {
+          width: 40rem;
+
+          // swiper-slide & swiper-slide-active
+          .hero_title {
+            // 타이틀
+            .hero_title_slide {
+              display: block;
+              font-size: 4rem;
+              line-height: 1.3em;
+              color: var(--black);
+              font-weight: bold;
+              transform: translateY(100px);
+              max-height: 3.7em;
+              width: 100%;
+              overflow: hidden;
+              opacity: 0;
+              visibility: hidden;
+              pointer-events: none;
+            }
+          }
+        }
+
+        // 히어로 타이틀 하단
+        .here_title_info {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+
+          .here_title_info_date {
+            font-size: 1.625rem;
+            line-height: 1.4em;
+            font-weight: 500;
+            font-family: var(--font-en);
+          }
+
+          .here_title_info_location {
+            font-size: 1.625rem;
+            line-height: 1.4em;
+            font-weight: 500;
+            margin-top: 0.188rem;
+          }
+        }
+
+        // 히어로 어로우 링크
+        .here_title_arrow {
+          display: block;
+          background-image: url(../../img/icon/hero_arrow.svg);
+          width: 14.125rem;
+          height: 12.688rem;
+          background-size: 14.125rem 12.688rem;
+          position: absolute;
+          right: 2.8rem;
+          bottom: 0.5rem;
+          z-index: 1;
+        }
+      }
+
+      .hero-wrap {
+        width: 35rem;
+        position: relative;
+
+        //히어로 이미지 영역
+        .hero_slide_right {
+          position: relative;
+
+          //이미지 링크
+          .hero_slide_r_box {
+            display: block;
+
+            //히어로 슬라이드 이미지
+            .hero_slide_img {
+              width: 100%;
+            }
+          }
+        }
+
+        .hero_slide_rightnull {
+          position: absolute;
+          top: 0;
+          right: -5rem;
+          height: 100%;
+          width: 5rem;
+
+          .hero_slide_rightnull_text {
+            white-space: nowrap;
+            font-size: 1.625rem;
+            line-height: 1.2em;
+            font-weight: 500;
+            transform: rotate(-90deg);
+            transform-origin: right bottom;
+            position: absolute;
+            top: -2rem;
+            right: 0;
+          }
+
+          .hero_slide_barcode {
+            display: block;
+            background-image: url(../../img/bg/hero_slide_barcode.svg);
+            width: 3.25rem;
+            height: 11.625rem;
+            background-size: 3.25rem 11.625rem;
+            position: absolute;
+            bottom: 0;
+            right: -0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  //페이지네이션
+  .custom-pagination-wrapper {
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+
+    .swiper-pagination {
+      position: static;
+      width: 35rem;
+      height: 0.688rem;
+      @include flex-center;
+      gap: 0.688rem;
+
+      .swiper-pagination-bullet {
+        margin: 0;
+        width: 0.688rem;
+        height: 0.688rem;
+        border-radius: 100%;
+        background-color: #c7c7c7;
+
+        &.swiper-pagination-bullet-active {
+          background-color: var(--black);
+        }
+      }
+    }
+  }
+}
+
+// 히어로 타이틀 액티브 효과
+.swiper-slide.swiper-slide-active {
+  .hero_title_slide {
+    // transform: translateY(0%) !important;
+    // opacity: 1 !important;
+    // visibility: visible !important;
+    // transition: 0.5s;
+    // pointer-events: auto;
+    animation: slideUp 0.5s ease forwards !important;
+  }
+}
+
+// 스와이퍼 플러그인 기본 해제
+.swiper {
+  margin-left: 0 !important;
+}
+
+// .first-load {
+//   animation: slideUp 0.5s ease forwards !important;
+// }
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}

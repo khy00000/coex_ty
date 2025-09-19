@@ -1,0 +1,639 @@
+@use "../setting/index" as *;
+
+.footer {
+  display: flex;
+
+  .footermain {
+    width: 25%;
+    padding: 1.625rem 1.25rem 1.625rem 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-right: 1px solid black;
+    position: relative;
+
+    .footermaininfo {
+      .footerinfo_logo {
+        display: block;
+        background-image: url(../../img/logo/footer_logo_c.svg);
+        background-size: 7.438rem 2.625rem;
+        width: 7.438rem;
+        height: 2.625rem;
+        margin-bottom: 1.875rem;
+      }
+
+      .footeraddress {
+        .address_item {
+          font-size: 1.125rem;
+          line-height: 1.5em;
+          color: #000;
+          margin-top: 0.125rem;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .tel {
+      display: block;
+      font-size: 1.125rem;
+      line-height: 1.4em;
+      font-weight: 600;
+      text-align: center;
+      padding: 1rem 1rem;
+      background-color: #f7f7f7;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0.625rem;
+      border-top: solid 1px #000;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0.625rem;
+      border-top: solid 1px #000;
+    }
+  }
+
+  .footernav {
+    width: 25%;
+
+    .footernavlist {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+
+      .footernavlist_item {
+        width: 50%;
+        height: 50%;
+        border-right: solid 1px #000;
+        position: relative;
+        padding-bottom: 11rem;
+
+        &:nth-child(-n + 2)::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0.625rem;
+          right: 0.625rem;
+          border-top: 1px solid #000;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0.625rem;
+          right: 0.625rem;
+          border-top: solid 1px #000;
+        }
+
+        .footernav_link {
+          font-size: 1.375rem;
+          line-height: 1.4em;
+          font-weight: 500;
+          position: absolute;
+          top: 1.375rem;
+          left: 1.25rem;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .footerlink {
+    width: 25%;
+    padding: 1.625rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-right: 1px solid black;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0.625rem;
+      right: 0.625rem;
+      border-top: solid 1px #000;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0.625rem;
+      right: 0.625rem;
+      border-top: solid 1px #000;
+    }
+
+    .footerlinklist {
+      .footerlinklist_item {
+        margin-bottom: 0.75rem;
+
+        .footerlink_link {
+          display: block;
+          font-size: 1.125rem;
+          line-height: 1.4em;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .footerlinksns {
+      display: flex;
+      gap: 0.375rem;
+      flex-wrap: wrap;
+
+      .footerlinksns_item {
+        .footersns_link {
+          display: block;
+          width: 2.938rem;
+          height: 2.938rem;
+          position: relative;
+          border-radius: 100%;
+          border: 1px solid black;
+          flex-shrink: 0;
+
+          &:hover {
+            border: 2px solid black;
+          }
+
+          img {
+            width: 1.125rem;
+            height: 1.125rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+
+  .footeinfo {
+    width: 25%;
+    padding: 1.625rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+    gap: 1.78rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0.625rem;
+      right: 0;
+      border-top: solid 1px #000;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0.625rem;
+      right: 0;
+      border-top: solid 1px #000;
+    }
+
+    .footerinfo_list {
+      .footerinfo_item {
+        .footerinfo_link {
+          display: block;
+          font-size: 1.125rem;
+          line-height: 1.4em;
+          font-weight: 500;
+          margin-bottom: 0.75rem;
+        }
+      }
+    }
+
+    .family_site {
+      width: 100%;
+
+      .family_list_link {
+        display: block;
+        padding: 1.25rem 3.25rem 1.25rem 1.25rem;
+        font-size: 1.125rem;
+        line-height: 1.2em;
+        font-weight: 500;
+        background-color: #f7f7f7;
+        position: relative;
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 1.25rem;
+          transform: translateY(-50%);
+          background-image: url(../../img/icon/footer_familyarrow.svg);
+          width: 0.938rem;
+          height: 0.5rem;
+          background-size: 0.938rem 0.5rem;
+        }
+
+        &.active::after {
+          transform: translateY(-50%) rotate(180deg);
+        }
+
+        &.active + .family_site_item_box {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .family_site_item_box {
+        position: absolute;
+        bottom: 6rem;
+        left: 1.25rem;
+        right: 1.25rem;
+        background-color: #f7f7f7;
+        padding: 0.75rem 0;
+        opacity: 0;
+        visibility: hidden;
+
+        .family_site_item {
+          .family_site_item_link {
+            display: block;
+            padding: 0.75rem 1.25rem;
+            font-size: 1rem;
+            line-height: 1.2em;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+.copyright {
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.5em;
+  font-weight: 300;
+  padding: 2rem 0 2.5rem;
+}
+
+// 탑버튼
+.top_button {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: fixed;
+  border: solid 2px #000;
+  bottom: 1.25rem;
+  right: 2rem;
+  transition-duration: 0.2s;
+  z-index: 998;
+  background-image: url(../../img/icon/top_button.svg);
+  background-size: 1rem 1.125rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.footerFix {
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    top: 3.6rem;
+    right: 2rem;
+  }
+}
+
+//챗봇 버튼
+.chatbot_wrap {
+  position: fixed;
+  bottom: 1.55rem;
+  right: 0.65rem;
+  z-index: 9999;
+  transition: bottom 0.3s ease;
+  display: flex;
+
+  &.visible {
+    bottom: 5.25rem;
+  }
+
+  // 챗봇 활성 버튼
+  .chatbot {
+    cursor: pointer;
+    opacity: 1;
+    display: block;
+
+    &.active .chatbot_active_x {
+      opacity: 1 !important;
+      transform: rotate(0deg) !important;
+    }
+
+    &.active .chatbot_icon {
+      transform: scale(0);
+    }
+
+    &.cb_close {
+      display: none !important;
+    }
+
+    .chatbot_button {
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      background-color: #000;
+      overflow: hidden;
+
+      .chatbot_icon {
+        background-image: url(../../img/logo/chatbot_icon.png);
+        background-size: 60px 60px;
+        width: 60px;
+        height: 60px;
+        position: relative;
+        transition: transform 0.16s linear, opacity 0.08s linear,
+          -webkit-transform 0.16s linear;
+      }
+
+      // 챗봇 아이콘 닫기
+      .chatbot_close {
+        position: absolute;
+        top: -3px;
+        right: -9px;
+
+        &.cb_close {
+          display: none;
+        }
+
+        .close_svg {
+          width: 15px;
+          height: 15px;
+
+          .chatbot_close_bg {
+            fill: #fff;
+          }
+
+          .chatbot_close_x {
+            stroke: #000000;
+            stroke-linecap: round;
+            stroke-miterlimit: 10;
+            stroke-width: 7px;
+          }
+        }
+      }
+
+      // 챗봇 컨테이너 활성 되었을때 클로즈
+      .chatbot_active_x {
+        background-image: url(../../img/logo/chatbot_active_x.png);
+        background-size: 60px 60px;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transform: rotate(-40deg);
+        transition: transform 0.16s linear, opacity 0.08s linear,
+          -webkit-transform 0.16s linear;
+      }
+    }
+  }
+
+  // 챗봇 아이콘 닫기
+  .chatbot_close {
+    position: relative;
+    top: -3px;
+    right: 6px;
+    cursor: pointer;
+
+    &.cb_close {
+      display: none;
+    }
+
+    .close_svg {
+      width: 15px;
+      height: 15px;
+
+      .chatbot_close_bg {
+        fill: #ffffff;
+      }
+
+      .chatbot_close_x {
+        stroke: #000000;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 7px;
+      }
+    }
+  }
+}
+
+//챗봇 컨테이너
+.chatbot_container_wrap {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  &.cb_close {
+    display: none !important;
+  }
+
+  .chatbot_container {
+    width: 370px;
+    max-height: calc(100vh - 2rem);
+    height: auto;
+    background-color: white;
+    position: fixed;
+    top: 3.7rem;
+    right: 1.25rem;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    font-family: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    border-radius: 17px 17px;
+    letter-spacing: 1;
+    -webkit-font-smoothing: auto;
+    line-height: 1.4;
+    box-shadow: 0 6px 60px 0 rgba(79, 98, 114, 0.2);
+
+    .chatbot_header {
+      flex-shrink: 0;
+      width: 370px;
+      height: 70px;
+      background-color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 17px 17px 0 0;
+
+      .chatbot_logo {
+        width: 50px;
+        height: 50px;
+      }
+
+      .chatbot_name {
+        font-size: 20px;
+        font-weight: 500;
+        color: white;
+        display: block;
+        margin-top: 3px;
+      }
+    }
+
+    // 메세지 영역
+    .chatbot_chatarea {
+      width: 100%;
+      flex: 1 1 auto;
+      background-color: white;
+      overflow-y: auto;
+      padding-bottom: 40px;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #dcdcdc;
+      }
+
+      /* 스크롤바 손잡이 */
+      &::-webkit-scrollbar-thumb {
+        background-color: #a4a2a2;
+        background-clip: padding-box;
+      }
+
+      .message {
+        background-color: #f2f2f2;
+        border-radius: 0 14px 14px 14px;
+        width: 300px;
+        margin: 25px 0 0 15px;
+        padding: 10px;
+        border: 3px solid transparent;
+
+        &:hover {
+          box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .text {
+          width: 100%;
+          height: auto;
+          color: #6c6c6c;
+          font-size: 14.5px;
+        }
+
+        .chatbutton_list {
+          width: 100%;
+
+          .chatinfo_item {
+            display: block;
+            width: 100%;
+            min-width: 228px;
+            cursor: pointer;
+            padding: 10px 14px;
+            background-color: white;
+            margin-top: 6px;
+            border-radius: 14px;
+            text-align: left;
+            box-sizing: border-box;
+            font-size: 15px;
+            font-weight: 570;
+
+            &:hover {
+              background-color: var(--black);
+              box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+            }
+
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    // 챗봇 입력창
+    .chatbot_input {
+      flex-shrink: 0;
+      width: 100%;
+      height: 70px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 0 17px 17px;
+
+      .chatbot_input_inner {
+        width: 338px;
+        height: 48px;
+        background-color: #f2f2f2;
+        padding: 0 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          color: #6c6c6c;
+
+          &:hover {
+            color: #000;
+          }
+        }
+
+        .input_chatbot {
+          width: 290px;
+          height: 36px;
+          background-color: #f2f2f2;
+          font-size: 16px;
+          color: rgb(193, 193, 193);
+          outline: none;
+
+          &:hover {
+            color: #6c6c6c;
+          }
+
+          &::placeholder {
+            color: rgb(193, 193, 193);
+          }
+
+          &:hover::placeholder {
+            color: #6c6c6c;
+          }
+
+          &:focus {
+            outline: auto;
+            color: #6c6c6c;
+          }
+        }
+      }
+    }
+  }
+}

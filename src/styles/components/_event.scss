@@ -1,0 +1,198 @@
+@use "../setting/index" as *;
+
+.event {
+  width: 100%;
+  height: 1284px;
+  margin-bottom: 9.75rem;
+  position: relative;
+
+  .event_title_wrap {
+    width: 324px;
+    height: 379px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3 {
+      position: relative;
+      display: inline-block;
+
+      .event_title {
+        font-size: 3.125rem;
+        font-weight: bold;
+        line-height: 1.2em;
+      }
+      
+      .event_title_num {
+        position: absolute;
+        display: block;
+        top: -0.25rem;
+        right: 0;
+        font-size: 1.875rem;
+        line-height: 1.2em;
+      }
+    }
+
+    .event_cal_text {
+      width: fit-content;
+      position: relative;
+      display: inline-block;
+      padding-left: 2.5rem;
+      padding-right: 1.25rem;
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.6em;
+      font-family: var(--font-en);
+      z-index: 999;
+
+      &::before {
+        content: "";
+        margin-top: -2px;
+        background-image: url(../../img/icon/event_calender.svg);
+        width: 1.9375rem;
+        height: 1.6875rem;
+        background-size: 1.9375rem 1.6875rem;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        display: block;
+      }
+
+      &::after {
+        content: "";
+        background-image: url(../../img/icon/event_arrow.svg);
+        width: 0.9375rem;
+        height: 0.9375rem;
+        background-size: 0.9375rem 0.9375rem;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        display: block;
+        margin-top: -2px;
+      }
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .event_table {
+    position: absolute;
+    inset: 0;
+    box-sizing: border-box;
+
+    .event_table_wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 33.33%);
+      box-sizing: border-box;
+
+      //이벤트 아이템
+      .event_list_item {
+        border-left: 2px solid #000;
+        position: relative;
+        padding: 0 0.7rem;
+
+        &.first_item {
+          grid-column-start: 3;
+        }
+
+        &.bottom_item .event_list_item_link {
+          border-bottom: 2px solid #000;
+        }
+
+        &.item_3_7 {
+          border-left: 0px;
+        }
+
+        &:hover {
+          .event_list_item_hover {
+            img {
+              opacity: 1;
+              filter: blur(0);
+            }
+          }
+        }
+
+        .event_list_item_link {
+          display: block;
+          position: relative;
+          border-top: 2px solid #000;
+          padding: 2.1875rem 1.55rem;
+
+          .evnet_list_item_category {
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: var(--font-en);
+            line-height: 1.4em;
+            margin-bottom: 0.6875rem;
+            padding-left: 0.875rem;
+            position: relative;
+
+            &::before {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              content: "";
+              width: 0.4375rem;
+              height: 0.4375rem;
+              border-radius: 100%;
+              transform: translateY(-50%);
+              background-color: #ED3DA6;
+            }
+
+            &[data-category="POP-UP/EVENT"]::before{
+              background-color: #A7A000;
+            }
+
+            &[data-category="EXHIBITION"]::before{
+              background-color: #ED3DA6;
+            }
+
+            &[data-category="Convention"]::before{
+              background-color: #8E49DE;
+            }
+          }
+
+          .event_list_item_title {
+            font-size: 1.875rem;
+            font-weight: bold;
+            line-height: 1.6em;
+            height: 3.2em;
+            margin-bottom: 12.6rem;
+            overflow: hidden;
+          }
+
+          .event_list_item_date {
+            font-size: 1.25rem;
+            font-weight: 500;
+            font-family: var(--font-en);
+            line-height: 1.2em;
+          }
+        }
+
+        //호버 아이템
+        .event_list_item_hover {
+          position: absolute;
+          top: 0.13rem;
+          left: 0;
+          width: 100%;
+          height: 99.5%;
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(10px);
+            opacity: 0;
+            transition: filter 0.4s ease, opacity 0.4s ease;
+          }
+        }
+      }
+    }
+  }
+}
