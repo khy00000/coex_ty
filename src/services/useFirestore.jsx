@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { db } from "../firebase.js";
+import { db } from "./firebase";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
-const useFirestore = (names) => {
+const usefirestore = (names) => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -37,4 +37,4 @@ const useFirestore = (names) => {
   return { data, loading };
 };
 
-export default useFirestore;
+export default usefirestore;

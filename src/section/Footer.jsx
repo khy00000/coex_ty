@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { footersns, footerinfo, familysite } from "../data/footerData";
+import { footersns, footerinfo, familysite } from "../assets/data/footerData";
 import chatbotLogo from "../assets/img/logo/chatbot_logo.png";
-import useResponsive from "../components/useResponsive";
+import useResponsive from "../hooks/useResponsive";
 
 const Footer = () => {
   // 패밀리 사이트 오픈

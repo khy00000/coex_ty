@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { guideData } from "../data/guideData.js";
+import { guideData } from "../assets/data/guideData.js";
 import FadeInGSAP from "../hooks/FadeInGSAP.jsx";
 
 const Guide = () => {

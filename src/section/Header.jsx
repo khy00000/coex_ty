@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
-import useResponsive from "../components/useResponsive";
+import useResponsive from "../hooks/useResponsive";
 
 const Header = () => {
   // 헤더 우측 서치 영역 액티브

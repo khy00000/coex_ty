@@ -1,8 +1,11 @@
+@use "sass:map";
 @use "./vars" as *;
 
+// max-width media
 @mixin respond-max($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (max-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    $bp: map.get($breakpoints, $breakpoint);
+    @media (max-width: $bp) {
       @content;
     }
   } @else {
@@ -10,9 +13,11 @@
   }
 }
 
+// min-width media
 @mixin respond-min($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    $bp: map.get($breakpoints, $breakpoint);
+    @media (min-width: $bp) {
       @content;
     }
   } @else {
@@ -20,6 +25,7 @@
   }
 }
 
+// flex utills
 @mixin flex-center {
   display: flex;
   justify-content: center;

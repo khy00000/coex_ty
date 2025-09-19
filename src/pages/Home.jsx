@@ -1,13 +1,13 @@
 import React from "react";
 
-import Hero from "../../components/Hero";
-import Guide from "../../components/Guide";
-import Event from "../../components/Event";
-import Ticket from "../../components/Ticket";
-import News from "../../components/News";
-import Mediawall from "../../components/Mediawall";
+import Hero from "../components/Hero";
+import Guide from "../components/Guide";
+import Event from "../components/Event";
+import Ticket from "../components/Ticket";
+import News from "../components/News";
+import Mediawall from "../components/Mediawall";
 
-import useResponsive from "../../hooks/useResponsive";
+import useResponsive from "../hooks/useResponsive";
 
 const Home = ({data}) => {
   const { isTablet } = useResponsive();
