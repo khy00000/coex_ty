@@ -30,7 +30,7 @@
     display: block;
     width: 6rem;
     height: 2.125rem;
-    background-image: url(../../img/logo/logo.svg);
+    background-image: url(../../assets/img/logo/logo.svg);
     background-size: 6rem 2.125rem;
   }
 }
@@ -189,7 +189,7 @@
             transform: translateY(-50%);
             width: 0.875rem;
             height: 0.875rem;
-            background-image: url(../../img/icon/primary_menu_ico.svg);
+            background-image: url(../../assets/img/icon/primary_menu_ico.svg);
             background-size: 0.875rem 0.875rem;
             margin-top: -1px;
           }
@@ -204,7 +204,7 @@
 
             //핑크 화살표
             &::after {
-              background-image: url(../../img/icon/primary_menu_ico_p.svg);
+              background-image: url(../../assets/img/icon/primary_menu_ico_p.svg);
             }
           }
         }
@@ -246,7 +246,7 @@
       &::after {
         content: "";
         display: inline-block;
-        background-image: url(../../img/icon/header_search_arrow.svg);
+        background-image: url(../../assets/img/icon/header_search_arrow.svg);
         background-size: 1rem 1rem;
         width: 1rem;
         height: 1rem;
@@ -260,7 +260,7 @@
 
       //청록색 어로우
       &:hover::after {
-        background-image: url(../../img/icon/promotion_hover.svg);
+        background-image: url(../../assets/img/icon/promotion_hover.svg);
       }
     }
   }
@@ -306,7 +306,7 @@
     top: 0;
     left: 0;
     display: block;
-    background-image: url(../../img/icon/header_search.svg);
+    background-image: url(../../assets/img/icon/header_search.svg);
     background-size: 1.813rem 1.75rem;
     width: 1.813rem;
     height: 1.75rem;
@@ -326,7 +326,7 @@
     top: 0;
     left: 0;
     display: block;
-    background-image: url(../../img/icon/header_search_close.svg);
+    background-image: url(../../assets/img/icon/header_search_close.svg);
     background-size: 1.813rem 1.75rem;
     width: 1.813rem;
     height: 1.75rem;
@@ -372,7 +372,7 @@
     left: 0.9rem;
     width: 1rem;
     height: 1rem;
-    background-image: url(../../img/icon/header_search.svg);
+    background-image: url(../../assets/img/icon/header_search.svg);
     background-size: 1rem 1rem;
   }
 
@@ -403,7 +403,7 @@
       content: "";
       width: 1.1rem;
       height: 0.79rem;
-      background-image: url(../../img/icon/header_search_button_arrow.svg);
+      background-image: url(../../assets/img/icon/header_search_button_arrow.svg);
       background-size: 1.1rem 0.79rem;
 
       @include absolute-center;

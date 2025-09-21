@@ -15,7 +15,7 @@
     .footermaininfo {
       .footerinfo_logo {
         display: block;
-        background-image: url(../../img/logo/footer_logo_c.svg);
+        background-image: url(../../assets/img/logo/footer_logo_c.svg);
         background-size: 7.438rem 2.625rem;
         width: 7.438rem;
         height: 2.625rem;
@@ -248,7 +248,7 @@
           top: 50%;
           right: 1.25rem;
           transform: translateY(-50%);
-          background-image: url(../../img/icon/footer_familyarrow.svg);
+          background-image: url(../../assets/img/icon/footer_familyarrow.svg);
           width: 0.938rem;
           height: 0.5rem;
           background-size: 0.938rem 0.5rem;
@@ -306,7 +306,7 @@
   right: 2rem;
   transition-duration: 0.2s;
   z-index: 998;
-  background-image: url(../../img/icon/top_button.svg);
+  background-image: url(../../assets/img/icon/top_button.svg);
   background-size: 1rem 1.125rem;
   background-repeat: no-repeat;
   background-position: center center;
@@ -369,7 +369,7 @@
       overflow: hidden;
 
       .chatbot_icon {
-        background-image: url(../../img/logo/chatbot_icon.png);
+        background-image: url(../../assets/img/logo/chatbot_icon.png);
         background-size: 60px 60px;
         width: 60px;
         height: 60px;
@@ -407,7 +407,7 @@
 
       // 챗봇 컨테이너 활성 되었을때 클로즈
       .chatbot_active_x {
-        background-image: url(../../img/logo/chatbot_active_x.png);
+        background-image: url(../../assets/img/logo/chatbot_active_x.png);
         background-size: 60px 60px;
         width: 60px;
         height: 60px;

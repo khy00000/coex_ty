@@ -64,7 +64,7 @@
     display: block;
     width: 1.75rem;
     height: 1.75rem;
-    background-image: url(../../img/icon/header_search_close.svg);
+    background-image: url(../../assets/img/icon/header_search_close.svg);
     background-size: 1.75rem 1.75rem;
     position: absolute;
     top: 50%;
@@ -140,7 +140,7 @@
               transform: translateY(-50%);
               width: 2rem;
               height: 2rem;
-              background-image: url(../../img/icon/mo_menu_mint.svg);
+              background-image: url(../../assets/img/icon/mo_menu_mint.svg);
               background-size: 2rem 2rem;
               background-repeat: no-repeat;
               transition: transform 0.2s;
@@ -176,7 +176,7 @@
             transform: translateY(-50%) rotate(0deg);
             width: 1.7rem;
             height: 1.7rem;
-            background-image: url(../../img/icon/mo_menu_arrow.svg);
+            background-image: url(../../assets/img/icon/mo_menu_arrow.svg);
             background-size: 1.7rem 1.7rem;
             background-repeat: no-repeat;
             transition: transform 0.2s;
@@ -263,7 +263,7 @@
             display: block;
             width: 1.5rem;
             height: 1.5rem;
-            background-image: url(../../img/icon/mo_menu_pink.svg);
+            background-image: url(../../assets/img/icon/mo_menu_pink.svg);
             background-size: 1.5rem 1.5rem;
             margin-top: 0.2rem;
           }
@@ -405,7 +405,7 @@
 
       &::after {
         content: "";
-        background-image: url(../../img/icon/guide_title_icon.svg);
+        background-image: url(../../assets/img/icon/guide_title_icon.svg);
         width: 5.625rem;
         height: 4.5rem;
         background-size: 5.625rem 4.5rem;

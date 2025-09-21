@@ -2,7 +2,7 @@
 
 .main_ticket {
   width: 100%;
-  background-image: url(../../img/bg/ticket_bg.jpg);
+  background-image: url(../../assets/img/bg/ticket_bg.jpg);
   position: relative;
 
   &::after {
@@ -68,7 +68,7 @@
           .ticket_prev {
             background: none;
             display: block;
-            background-image: url(../../img/icon/ticket_slide_prev.svg);
+            background-image: url(../../assets/img/icon/ticket_slide_prev.svg);
             width: 4.4375rem;
             height: 3.1875rem;
             background-size: 4.4375rem 3.1875rem;
@@ -78,7 +78,7 @@
           .ticket_next {
             background: none;
             display: block;
-            background-image: url(../../img/icon/ticket_slide_next.svg);
+            background-image: url(../../assets/img/icon/ticket_slide_next.svg);
             width: 4.4375rem;
             height: 3.1875rem;
             background-size: 4.4375rem 3.1875rem;
@@ -119,7 +119,7 @@
 
                 &::before {
                   content: "";
-                  background-image: url(../../img/bg/ticket_left_top.png);
+                  background-image: url(../../assets/img/bg/ticket_left_top.png);
                   background-size: 43px 43px;
                   width: 43px;
                   height: 43px;
@@ -131,7 +131,7 @@
 
                 &::after {
                   content: "";
-                  background-image: url(../../img/bg/ticket_left_bottom.png);
+                  background-image: url(../../assets/img/bg/ticket_left_bottom.png);
                   background-size: 43px 43px;
                   width: 43px;
                   height: 43px;
@@ -305,7 +305,7 @@
                   position: absolute;
                   bottom: 1.375rem;
                   right: 1.375rem;
-                  background-image: url(../../img/bg/ticket_center_bc.png);
+                  background-image: url(../../assets/img/bg/ticket_center_bc.png);
                   width: 12.875rem;
                   height: 2.6rem;
                   background-size: 12.875rem 7rem;
@@ -332,7 +332,7 @@
 
                 &::before {
                   content: "";
-                  background-image: url(../../img/bg/ticket_right_top.png);
+                  background-image: url(../../assets/img/bg/ticket_right_top.png);
                   background-size: 43px 43px;
                   width: 43px;
                   height: 43px;
@@ -343,7 +343,7 @@
 
                 &::after {
                   content: "";
-                  background-image: url(../../img/bg/ticket_right_bottom.png);
+                  background-image: url(../../assets/img/bg/ticket_right_bottom.png);
                   background-size: 43px 43px;
                   width: 43px;
                   height: 43px;

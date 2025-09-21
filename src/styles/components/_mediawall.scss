@@ -12,7 +12,7 @@
     left: 0;
     right: 0;
     height: 160%;
-    background-image: url(../../img/bg/mediawall_bg.jpg);
+    background-image: url(../../assets/img/bg/mediawall_bg.jpg);
     background-size: cover;
     background-position: center center;
     transform: translate3d(0px, -217.877px, 0px);
@@ -86,7 +86,7 @@
 
               &::after {
                 content: "";
-                background-image: url(../../img/icon/mediawall_arrow.svg);
+                background-image: url(../../assets/img/icon/mediawall_arrow.svg);
                 width: 1.563rem;
                 height: 1.375rem;
                 background-size: 1.563rem 1.375rem;
