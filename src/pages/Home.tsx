@@ -9,7 +9,30 @@ import Mediawall from "../components/Mediawall";
 
 import useResponsive from "../hooks/useResponsive";
 
-const Home = ({data}) => {
+interface EventItem {
+  id: number | string;
+  hero?: boolean;
+  booking?: boolean;
+  [key: string]: any;
+}
+
+interface NewsItem {
+  id: number | string;
+  title: string;
+  description?: string;
+  [key: string]: any;
+}
+
+// 2. Home Props 타입
+interface HomeProps {
+  data: {
+    eventlistData: EventItem[];
+    mainnewsData: NewsItem[];
+  };
+}
+
+// 3. 컴포넌트 정의
+const Home: React.FC<HomeProps> = ({ data }) => {
   const { isTablet } = useResponsive();
 
   const heroitem = data.eventlistData.filter((i) => i.hero);
