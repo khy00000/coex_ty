@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Not = () => {
+const Not: React.FC = () => {
     return (
         <div>Not</div>
     )
