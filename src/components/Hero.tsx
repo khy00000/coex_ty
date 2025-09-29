@@ -3,23 +3,44 @@ import { Link } from "react-router-dom";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Controller, Pagination } from "swiper/modules";
+import type { Swiper as SwiperCore } from "swiper";
+
 import "swiper/css";
 import "swiper/css/pagination";
 
-const Hero = ({data}) => {
-  // herodata 현재 활성 index;
-  const [currentIndex, setCurrentIndex] = useState(0);
+// ===== 타입 정의 =====
+interface HeroItem {
+  heroid: string | number;
+  sub: string;
+  title: string;
+  link: string;
+  date: string;
+  location: string;
+  img: string;
+  category: string;
+}
 
-  const [textSwiper, setTextSwiper] = useState(null);
-  const [imgSwiper, setImgSwiper] = useState(null);
-  // .hero_title_slide 높이에 따라 부모 박스 높이 가변
-  const textWrapRef = useRef(null);
+interface HeroProps {
+  data: HeroItem[];
+}
 
-  //활성 hero_title_slide 높이 설정
+const Hero: React.FC<HeroProps> = ({ data }) => {
+  // 현재 활성 index
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  // Swiper 인스턴스
+  const [textSwiper, setTextSwiper] = useState<SwiperCore | null>(null);
+  const [imgSwiper, setImgSwiper] = useState<SwiperCore | null>(null);
+
+  // 텍스트 래퍼 Ref
+  const textWrapRef = useRef<HTMLDivElement | null>(null);
+
+  // 활성 hero_title_slide 높이 설정
   useEffect(() => {
     const activeSlide = document.querySelector(
       ".swiper-slide-active .hero_title_slide"
-    );
+    ) as HTMLElement | null;
+
     const wrap = textWrapRef.current;
 
     if (activeSlide && wrap) {
@@ -28,14 +49,15 @@ const Hero = ({data}) => {
     }
   }, [currentIndex]);
 
-  //콘솔 디버깅 용
+  // 양방향 컨트롤 연결
   useEffect(() => {
     if (textSwiper && imgSwiper) {
       textSwiper.controller.control = imgSwiper;
       imgSwiper.controller.control = textSwiper;
 
-      window.textSwiper = textSwiper;
-      window.imgSwiper = imgSwiper;
+      // 디버깅용
+      (window as any).textSwiper = textSwiper;
+      (window as any).imgSwiper = imgSwiper;
     }
   }, [textSwiper, imgSwiper]);
 
@@ -51,9 +73,7 @@ const Hero = ({data}) => {
               direction="vertical"
               modules={[Controller, Autoplay]}
               loop={true}
-              autoplay={{
-                delay: 4000,
-              }}
+              autoplay={{ delay: 4000 }}
               onSwiper={setTextSwiper}
               onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
               className="hero_title_wrap"
@@ -65,6 +85,7 @@ const Hero = ({data}) => {
                     to={item.link}
                     className="hero_title_slide"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     {item.title}
                   </Link>
@@ -82,10 +103,11 @@ const Hero = ({data}) => {
               </div>
             </div>
             <Link
-              to={data[currentIndex]?.link}
+              to={data[currentIndex]?.link || "#"}
               className="here_title_arrow"
               target="_blank"
-            ></Link>
+              rel="noreferrer"
+            />
           </div>
 
           <div className="hero-wrap">
@@ -102,11 +124,16 @@ const Hero = ({data}) => {
               >
                 {data.map((item) => (
                   <SwiperSlide key={item.heroid}>
-                    <Link to={item.link} className="hero_slide_r_box">
+                    <Link
+                      to={item.link}
+                      className="hero_slide_r_box"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <img
                         className="hero_slide_img"
                         src={item.img}
-                        alt={`슬라이드 이미지 ${item.id}`}
+                        alt={`슬라이드 이미지 ${item.heroid}`}
                       />
                     </Link>
                   </SwiperSlide>
