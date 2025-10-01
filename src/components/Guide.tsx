@@ -1,9 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { guideData } from "../assets/data/guideData.js";
-import FadeInGSAP from "../hooks/FadeInGSAP.jsx";
+import { guideData } from "../assets/data/guideData";
+import FadeInGSAP from "../hooks/FadeInGSAP";
 
-const Guide = () => {
+// guideData 아이템 타입
+interface GuideItem {
+  id: number;
+  link: string;
+  icon: string;
+  title: string;
+}
+
+const Guide: React.FC = () => {
   return (
     <div className="guide">
       <FadeInGSAP delay={0.3}>
@@ -19,16 +27,18 @@ const Guide = () => {
           </span>
         </div>
       </FadeInGSAP>
+
       <FadeInGSAP delay={0.4}>
         <div className="guide_right">
           <div className="guide_right_title">GUIDE</div>
           <div className="guide_right_list">
             <ul className="guide_right_list_wrap">
-              {guideData.map((item) => (
+              {guideData.map((item: GuideItem) => (
                 <li key={item.id} className="guide_right_item">
                   <Link
                     to={item.link}
                     target="_blank"
+                    rel="noreferrer"
                     className="guide_right_item_link"
                   >
                     <img
