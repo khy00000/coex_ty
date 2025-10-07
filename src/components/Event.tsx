@@ -10,8 +10,27 @@ import "swiper/css/pagination";
 import useResponsive from "../hooks/useResponsive";
 import FadeInGSAP from "../hooks/FadeInGSAP";
 
-const Event = ({data}) => {
-  const { isDesktop, isTablet, isMobile } = useResponsive();
+// 이벤트 아이템 타입
+interface EventItem {
+  id: number | string;
+  link: string;
+  img: string;
+  category: string;
+  title: string;
+  date: string;
+}
+
+// 컴포넌트 Props 타입
+interface EventProps {
+  data: EventItem[];
+}
+
+const Event: React.FC<EventProps> = ({ data }) => {
+  const { isDesktop, isTablet, isMobile } = useResponsive() as {
+    isDesktop: boolean;
+    isTablet: boolean;
+    isMobile: boolean;
+  };
 
   return (
     <div className="event">
@@ -40,7 +59,7 @@ const Event = ({data}) => {
             slidesPerView="auto"
             className="mo-event_table"
           >
-            {data.slice(0, 10).map((item, index) => (
+            {data.slice(0, 10).map((item) => (
               <SwiperSlide className="mo-event-item-wrap" key={item.id}>
                 {/* 이벤트 아이템 */}
                 <Link to={item.link} className="mo-event-item">
@@ -77,13 +96,13 @@ const Event = ({data}) => {
             {data.slice(0, 10).map((item, index) => (
               <div
                 className={`
-                event_list_item
-                ${index === 0 ? "first_item" : ""}
-                ${isDesktop && index > 5 ? "bottom_item" : ""}
-                ${isDesktop && [2, 6].includes(index) ? "item_3_7" : ""}
-                ${isTablet && [1, 4, 7].includes(index) ? "item_3_7" : ""}
-                ${isTablet && index > 6 ? "bottom_item" : ""}
-              `.trim()}
+                  event_list_item
+                  ${index === 0 ? "first_item" : ""}
+                  ${isDesktop && index > 5 ? "bottom_item" : ""}
+                  ${isDesktop && [2, 6].includes(index) ? "item_3_7" : ""}
+                  ${isTablet && [1, 4, 7].includes(index) ? "item_3_7" : ""}
+                  ${isTablet && index > 6 ? "bottom_item" : ""}
+                `.trim()}
                 key={item.id}
               >
                 {/* 이벤트 아이템 */}
