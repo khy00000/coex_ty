@@ -1,31 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import mediawallimg1 from "../assets/img/bg/mediawall_con1.jpg";
-import mediawallimg2 from "../assets/img/bg/mediawall_con2.jpg";
-import mediawallimg3 from "../assets/img/bg/mediawall_con3.jpg";
-import mediawallimg4 from "../assets/img/bg/mediawall_con4.jpg";
-import mediawallimg5 from "../assets/img/bg/mediawall_con5.jpg";
-import mediawallimg6 from "../assets/img/bg/mediawall_con6.jpg";
-
 import FadeInGSAP from "../hooks/FadeInGSAP";
 
-function Mediawall() {
-  const mediaImg = [
-    mediawallimg1,
-    mediawallimg2,
-    mediawallimg3,
-    mediawallimg4,
-    mediawallimg5,
-    mediawallimg6,
-  ];
+interface MediaMetaItem {
+  name: string;
+  link: string;
+}
 
-  const mediametaItem = [
-    "INSTAGRAM",
-    "YOUTUBE",
-    "FACEBOOK",
-    "NAVER BLOG",
-    "Twitter",
+const Mediawall: React.FC = () => {
+
+  const mediaImg: string[] = Object.values(
+    import.meta.glob("../assets/img/bg/mediawall_con*.jpg", {eager: true, import: "default"}));
+
+  const mediametaItem: MediaMetaItem[] = [
+    { name: "INSTAGRAM", link: "#" },
+    { name: "YOUTUBE", link: "#" },
+    { name: "FACEBOOK", link: "#" },
+    { name: "NAVER BLOG", link: "#" },
+    { name: "TWITTER", link: "#" },
   ];
 
   return (
@@ -43,9 +35,11 @@ function Mediawall() {
           <div className="mediameta">
             <FadeInGSAP delay={1}>
               <ul className="mediameta_item">
-                {mediametaItem.map((metaitem, m) => (
-                  <li key={m} className="mediameta_item_list">
-                    <Link to="#" className="mediameta_item_list_link">{metaitem}</Link>
+                {mediametaItem.map((item, index) => (
+                  <li key={index} className="mediameta_item_list">
+                    <Link to={item.link} className="mediameta_item_list_link">
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -86,6 +80,6 @@ function Mediawall() {
       </div>
     </div>
   );
-}
+};
 
 export default Mediawall;
