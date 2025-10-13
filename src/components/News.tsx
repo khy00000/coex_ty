@@ -3,9 +3,27 @@ import { Link } from "react-router-dom";
 
 import FadeInGSAP from "../hooks/FadeInGSAP";
 
-function News({data}) {
+interface NewsContent {
+  contentsid: number;
+  link: string;
+  dateday: number;
+  datemonth: number;
+  title: string;
+}
+
+interface NewsTab {
+  tabid: number;
+  tabtitle: string;
+  contents: NewsContent[];
+}
+
+interface NewsProps {
+  data: NewsTab[];
+}
+
+const News: React.FC<NewsProps> = ({data}) => {
   // 활성 탭 상태
-  const [activeTabId, setActiveTabId] = useState(0);
+  const [activeTabId, setActiveTabId] = useState<number>(0);
 
   // 활성화된 탭 콘텐츠
   const activeTab = data.find((news) => news.tabid === activeTabId);
@@ -13,7 +31,7 @@ function News({data}) {
   // 날짜 최신순으로 정렬 및 날짜 가공
   const sortedContents = activeTab?.contents
     ?.slice()
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .map((item) => {
       const date = new Date(item.date);
       return {
