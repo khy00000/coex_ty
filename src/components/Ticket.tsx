@@ -9,12 +9,26 @@ import "swiper/css/pagination";
 
 import FadeInGSAP from "../hooks/FadeInGSAP";
 
-const Ticket = ({data}) => {
+interface TicketItem {
+  id: number;
+  img: string;
+  title: string;
+  date: string;
+  location: string;
+  link: string;
+  bookinglink: string;
+}
+
+interface TicketProps {
+  data: TicketItem[];
+}
+
+const Ticket: React.FC<TicketProps> = ({ data }) => {
   //부킹 티켓 임의 반복
   const refeatbooking = [...data, ...data];
 
   //불릿 두개
-  const handleSlideChange = (swiper) => {
+  const handleSlideChange = (swiper: any) => {
     const bullets = document.querySelectorAll(
       ".ticket_pagination .swiper-pagination-bullet"
     );
@@ -28,7 +42,7 @@ const Ticket = ({data}) => {
       bullets[bulletIndex].classList.add("swiper-pagination-bullet-active");
     }
   };
-  
+
   return (
     <div className="main_ticket">
       <div className="main_ticket_wrap">
