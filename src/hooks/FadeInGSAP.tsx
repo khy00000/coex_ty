@@ -4,11 +4,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FadeInGSAP = ({ children, delay = 0 }) => {
-  const sectionRef = useRef();
+interface FadeInGSAPProps {
+  children: ReactNode;
+  delay: number;
+}
+
+const FadeInGSAP: React.FC<FadeInGSAPProps> = ({ children, delay = 0 }) => {
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const el = sectionRef.current;
+    if (!el) return;
 
     gsap.fromTo(
       el,
@@ -37,7 +43,7 @@ const FadeInGSAP = ({ children, delay = 0 }) => {
 
   // 자식이 유효한 엘리먼트인지 확인, ref 프롭스 자식에게 전달
   if (isValidElement(children)) {
-    return cloneElement(children, { ref: sectionRef });
+    return cloneElement(children as ReactElement, { ref: sectionRef });
   }
 
   console.warn("단일 엘리먼트만 허용합니다.");
