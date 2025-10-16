@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 
-const useResponsive = () => {
-  const getStatus = () => {
+interface ResponsiveStatus {
+  isMobile: boolean;
+  isTablet: boolean;
+  isDesktop: boolean;
+}
+
+const useResponsive = (): ResponsiveStatus => {
+  const getStatus = (): ResponsiveStatus => {
     const width = window.innerWidth;
     return {
       isMobile: width <= 747,
@@ -10,7 +16,7 @@ const useResponsive = () => {
     };
   };
 
-  const [status, setStatus] = useState(getStatus());
+  const [status, setStatus] = useState<ResponsiveStatus>(getStatus());
 
   // useEffect(() => {
   //   console.log("현재 뷰포트 상태:", status);

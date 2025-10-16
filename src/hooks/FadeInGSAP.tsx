@@ -5,8 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 interface FadeInGSAPProps {
-  children: ReactNode;
-  delay: number;
+  children: ReactElement;
+  delay?: number;
 }
 
 const FadeInGSAP: React.FC<FadeInGSAPProps> = ({ children, delay = 0 }) => {
