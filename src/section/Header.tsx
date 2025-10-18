@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import gsap from "gsap";
 import useResponsive from "../hooks/useResponsive";
 
-const Header = () => {
+const Header: React.FC = () => {
   // 헤더 우측 서치 영역 액티브
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState<boolean>(false);
   // 헤더 숨김 효과
-  const [hidden, setHidden] = useState(false);
-  const [lastscroll, setLastcroll] = useState(0);
+  const [hidden, setHidden] = useState<boolean>(false);
+  const [lastscroll, setLastcroll] = useState<number>(0);
   // 반응형 훅
   const { isDesktop } = useResponsive();
   // 모바일 메뉴 1뎁스
-  const [isMenu, setIsMenu] = useState(false);
+  const [isMenu, setIsMenu] = useState<boolean>(false);
   // 모바일 메뉴 2뎁스 어로우 액티브
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   // 모바일 메뉴 등장 효과
-  const modepth1Ref = useRef(null);
+  const modepth1Ref = useRef<HTMLUListElement | null>(null);
 
   // 헤더 숨김
   useEffect(() => {
@@ -63,7 +63,7 @@ const Header = () => {
         {/* 모바일 버튼 */}
         <button
           className={`mo_menu ${!isDesktop && isMenu ? "momenuopen" : ""}`}
-          onClick={(e) => {
+          onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
             if (isDesktop) return;
             e.preventDefault();
             e.stopPropagation();
@@ -78,7 +78,7 @@ const Header = () => {
           className={`mo_menu_close ${
             !isDesktop && isMenu ? "momenuopen" : ""
           }`}
-          onClick={(e) => {
+          onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
             if (isDesktop) return;
             e.preventDefault();
             e.stopPropagation();
@@ -110,7 +110,7 @@ const Header = () => {
             {/* 2depth */}
             <li
               className="primary_menu_2 pc-li mo-li"
-              onClick={(e) => {
+              onClick={(e: React.MouseEvent<HTMLLIElement>) => {
                 if (isDesktop) return;
                 e.preventDefault();
                 e.stopPropagation();
@@ -201,7 +201,7 @@ const Header = () => {
           <Link
             to="#"
             className={`header_search_link_open ${active ? "active" : ""}`}
-            onClick={(e) => {
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
               e.preventDefault();
               setActive(true);
             }}
@@ -211,7 +211,7 @@ const Header = () => {
           <Link
             to="#"
             className={`header_search_link_close ${active ? "active" : ""}`}
-            onClick={(e) => {
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
               e.preventDefault();
               setActive(false);
             }}
