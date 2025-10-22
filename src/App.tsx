@@ -8,10 +8,17 @@ import Cursor from "./components/Cursor";
 
 import usefirestore from "./services/usefirestore";
 
-const App: React.FC = () => {
-  const { data, loading } = usefirestore(["eventlistData", "mainnewsData"]);
+const COLLECTION_NAMES = ["eventlistData", "mainnewsData"] as const;
 
-  if (loading || !data) {
+interface FirestoreData {
+  eventlistData: any[];
+  mainnewsData: any[];
+}
+
+const App: React.FC = () => {
+  const { data, loading, error } = usefirestore<FirestoreData>(COLLECTION_NAMES);
+
+  if (loading || error) {
     return <div></div>;
   }
 

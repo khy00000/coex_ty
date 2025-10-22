@@ -35,10 +35,11 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ data }) => {
   const { isTablet } = useResponsive();
 
-  const heroitem = data.eventlistData.filter((i) => i.hero);
-  const eventitem = data.eventlistData || [];
-  const bookingitem = data.eventlistData.filter((i) => i.booking);
-  const mainnews = data.mainnewsData || [];
+  // 데이터 유효성 검증 후 필터링
+  const heroitem = data?.eventlistData.filter((i) => i.hero);
+  const eventitem = data?.eventlistData || [];
+  const bookingitem = data?.eventlistData.filter((i) => i.booking);
+  const mainnews = data?.mainnewsData || [];
 
   return (
     <div>
