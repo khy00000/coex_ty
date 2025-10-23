@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { footersns, footerinfo, familysite } from "../assets/data/footerData";
+import { footerData } from "../assets/data/footerData";
 import chatbotLogo from "../assets/img/logo/chatbot_logo.png";
 import useResponsive from "../hooks/useResponsive";
 
-const Footer = () => {
+const Footer: React.FC = () => {
+  const { sns, info, family } = footerData;
+
   // 패밀리 사이트 오픈
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState<boolean>(false);
 
   // 탑버튼 visible
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState<boolean>(false);
   // 탑버튼 푸터 고정
-  const [footerFix, setFooterFix] = useState(false);
+  const [footerFix, setFooterFix] = useState<boolean>(false);
 
   // 챗봇 아이콘 클릭 close/챗봇 컨테이너 활성 비활성
-  const [cbActive, setCbActive] = useState(false);
+  const [cbActive, setCbActive] = useState<boolean>(false);
   // 챗봇 닫기 버튼
-  const [cbClose, setCbclose] = useState(false);
+  const [cbClose, setCbclose] = useState<boolean>(false);
 
   // 반응형
   const { isTablet, isMobile } = useResponsive();
@@ -126,7 +128,7 @@ const Footer = () => {
             </ul>
 
             <ul className="footerlinksns">
-              {footersns.map((sns, s) => (
+              {sns.map((sns, s) => (
                 <li key={s} className="footerlinksns_item">
                   <Link to="#" className="footersns_link" title={sns.name}>
                     <img
@@ -144,7 +146,7 @@ const Footer = () => {
 
           <div className="footeinfo">
             <ul className="footerinfo_list">
-              {footerinfo.map((info, i) => (
+              {info.map((info, i) => (
                 <li key={i} className="footerinfo_item">
                   <Link to="#" className="footerinfo_link">
                     {info}
@@ -163,7 +165,7 @@ const Footer = () => {
               </button>
               {/* 패밀리 메뉴 */}
               <ul className="family_site_item_box">
-                {familysite.map((family, f) => (
+                {family.map((family, f) => (
                   <li key={f} className="family_site_item">
                     <Link to="#" className="family_site_item_link">
                       {family}

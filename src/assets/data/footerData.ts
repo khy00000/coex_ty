@@ -1,4 +1,16 @@
-export const footersns = [
+export interface FooterSnsItem {
+  name: string;
+  icon: string;
+}
+
+export interface FooterData {
+  sns: FooterSnsItem[];
+  info: string[];
+  family: string[];
+}
+
+// 데이터
+const footersns: FooterSnsItem[] = [
   {
     name: "인스타그램",
     icon: "https://raw.githubusercontent.com/khy00000/storage/2b5ae35d0ea67555424a7e6feca8e6c61ce28614/coex/img/icon/footer_insta.svg",
@@ -25,7 +37,7 @@ export const footersns = [
   },
 ];
 
-export const footerinfo = [
+const footerinfo: string[] = [
   "안전경영",
   "친환경",
   "개인정보처리방침",
@@ -34,7 +46,7 @@ export const footerinfo = [
   "사이트맵",
 ];
 
-export const familysite = [
+const familysite: string[] = [
   "KITA",
   "WTC Seoul",
   "KTNET",
@@ -43,3 +55,10 @@ export const familysite = [
   "Coex VINA",
   "CoexMall",
 ];
+
+// 객체로 합쳐 내보내기
+export const footerData: FooterData = {
+  sns: footersns,
+  info: footerinfo,
+  family: familysite,
+};
