@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, Firestore } from "firebase/firestore";
+import type { FirebaseApp } from "firebase/app";
 
-const firebaseConfig = {
+const firebaseConfig: Record<string, string> = {
   apiKey: "AIzaSyCc3zVL-_RKbMLpXjVEi0WJS1L4t2Fkl-U",
   authDomain: "hee-coex.firebaseapp.com",
   projectId: "hee-coex",
@@ -12,5 +13,5 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+const app: FirebaseApp = initializeApp(firebaseConfig);
+export const db: Firestore = getFirestore(app);

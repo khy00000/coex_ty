@@ -3,14 +3,6 @@ import { Link } from "react-router-dom";
 import { guideData } from "../assets/data/guideData";
 import FadeInGSAP from "../hooks/FadeInGSAP";
 
-// guideData 아이템 타입
-interface GuideItem {
-  id: number;
-  link: string;
-  icon: string;
-  title: string;
-}
-
 const Guide: React.FC = () => {
   return (
     <div className="guide">
@@ -33,7 +25,7 @@ const Guide: React.FC = () => {
           <div className="guide_right_title">GUIDE</div>
           <div className="guide_right_list">
             <ul className="guide_right_list_wrap">
-              {guideData.map((item: GuideItem) => (
+              {guideData.map((item) => (
                 <li key={item.id} className="guide_right_item">
                   <Link
                     to={item.link}

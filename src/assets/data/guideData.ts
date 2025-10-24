@@ -1,4 +1,11 @@
-export const guideData = [
+export interface GuideData {
+  id: number;
+  title: string;
+  link: string;
+  icon: string;
+}
+
+export const guideData: GuideData[] = [
   {
     id: 0,
     title: "주차 안내",
